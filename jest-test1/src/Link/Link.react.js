@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+// import { act } from '@testing-library/react';
+// import { act } from 'react-dom/test-utils';
+
+import TestRenderer from 'react-test-renderer';
+const { act } = TestRenderer;
 
 const STATUS = {
   HOVERED: 'hovered',
@@ -9,11 +14,17 @@ const Link = ({ page, children }) => {
   const [status, setStatus] = useState(STATUS.NORMAL);
 
   const onMouseEnter = () => {
-    setStatus(STATUS.HOVERED);
+    act(() => {
+      /* fire events that update state */
+      setStatus(STATUS.HOVERED);
+    });
   };
 
   const onMouseLeave = () => {
-    setStatus(STATUS.NORMAL);
+    act(() => {
+      /* fire events that update state */
+      setStatus(STATUS.NORMAL);
+    });
   };
 
   return (
