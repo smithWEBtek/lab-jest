@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import catKick from "../src/Assets/Images/roundhouse.jpeg";
+import "./App.css";
 
 function App() {
+  console.log('new Date() ms time: ', new Date().getMilliseconds());
+  console.log('new Date(Date.now()) ms time: ', new Date(Date.now()).getMilliseconds());
+  console.log('new Date() s time: ', new Date().getSeconds());
+  console.log('new Date(Date.now()) s time: ', new Date(Date.now()).getSeconds());
+  console.log('new Date() time: ', new Date());
+  console.log('new Date(Date.now()) time: ', new Date(Date.now()));
+  console.log('Date.now() time: ', Date.now());
+  console.log('new Date().getTime() time: ', new Date().getTime());
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <figure>
+        <img
+          src={catKick}
+          alt="Cat executing a roundhouse kick"
+        />
+        <br />
+        <figcaption>
+          Master Cat demonstrates proper form of a roundhouse kick.
+        </figcaption>
+      </figure>
     </div>
   );
 }
