@@ -14,15 +14,17 @@ const Link = ({ page, children }) => {
   const [status, setStatus] = useState(STATUS.NORMAL);
 
   const onMouseEnter = () => {
+      // https://kentcdodds.com/blog/fix-the-not-wrapped-in-act-warning
     act(() => {
-      /* fire events that update state */
+      // fire events that update state
       setStatus(STATUS.HOVERED);
     });
   };
 
   const onMouseLeave = () => {
+      // https://kentcdodds.com/blog/fix-the-not-wrapped-in-act-warning
     act(() => {
-      /* fire events that update state */
+      // fire events that update state
       setStatus(STATUS.NORMAL);
     });
   };
